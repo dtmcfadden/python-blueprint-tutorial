@@ -10,16 +10,19 @@ https://github.com/felipeflorencio/StartingWithBlueprintTutorial
 
 This is the basic Flask project that I use to start my projects, here I have the basic setup to work with flask
 
-## Before start export this variables when on test or production according to your environment
+## Before start add these to a .env file
 
-export FLASK_APP=app.py
-export APP_SETTINGS=config.DevelopmentConfig
+FLASK_APP=app.py
+APP_SETTINGS=config.DevelopmentConfig
+FLASK_DEBUG=True
 
 # Virtual Environment Setup With Windows
 
 python -m venv .venv
 
 .venv\Scripts\activate.bat
+
+'deactivate' to exit
 
 # pip functions
 
@@ -38,3 +41,23 @@ pip install [package_name] --upgrade
 ## Update requirements.txt file
 
 pip freeze > requirements.txt
+
+# flask-sqlalchemy
+
+https://flask-migrate.readthedocs.io/en/latest/
+
+## initialize - only done once
+
+flask db init
+
+## migrate - add migration entry
+
+flask db migrate -m "Initial migration"
+
+## upgrade - apply changes
+
+flask db upgrade
+
+## help
+
+flask db --help

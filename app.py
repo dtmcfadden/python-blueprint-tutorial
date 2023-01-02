@@ -7,12 +7,12 @@ from dotenv import load_dotenv
 from flask import Flask
 from extensions import database, commands
 
+load_dotenv()
 
 # blueprint import
 
 
 def create_app():
-    load_dotenv()
 
     app = Flask(__name__)
     # setup with the configuration provided by the user / environment
